@@ -11,7 +11,7 @@
         
         /* Золотая шапка сайта */
         header { background: linear-gradient(135deg, var(--gold) 0%, #b89332 100%); padding: 15px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
         .logo-box { display: flex; align-items: center; text-decoration: none; color: #000; font-weight: 700; font-size: 1.3rem; letter-spacing: 0.5px; }
         .logo-img { height: 38px; margin-right: 12px; object-fit: contain; }
         nav a { color: #000; text-decoration: none; margin-left: 20px; font-size: 0.95rem; font-weight: 600; transition: opacity 0.2s; }
@@ -41,8 +41,14 @@
         .bullets li::before { content: "✓"; color: #b89332; font-weight: 700; position: absolute; left: 5px; }
         .tech-img { width: 100%; border-radius: 8px; border: 1px solid #e1e4e8; object-fit: cover; }
 
+        /* Блок с цветами плитки */
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+        .color-card { background: var(--card-bg); border-radius: 12px; padding: 20px; text-align: center; border: 1px solid #e1e4e8; }
+        .color-card .price { font-size: 1.2rem; font-weight: 700; color: #b89332; margin: 10px 0; }
+        .color-dot { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px; border: 2px solid #ddd; }
+
         /* Карточки прайса */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .card { background: var(--card-bg); padding: 20px; border-radius: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #e1e4e8; }
         .card-img-box { width: 100%; height: 180px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; background: #fff; border: 1px solid #e1e4e8; display: flex; align-items: center; justify-content: center; }
         .card-img { width: 100%; height: 100%; object-fit: cover; }
@@ -61,23 +67,58 @@
         .form-control:focus { border-color: var(--gold); outline: none; }
         
         footer { background: var(--dark); color: #aaa; padding: 50px 20px; text-align: center; font-size: 0.9rem; }
-        @media (max-width: 768px) { h1 { font-size: 1.7rem; } .nav-container { flex-direction: column; gap: 10px; } .tech-grid { grid-template-columns: 1fr; } }
+        footer a { color: var(--gold); text-decoration: none; }
+
+        .address-block { background: var(--card-bg); padding: 25px; border-radius: 12px; margin-top: 20px; text-align: center; border: 1px solid #e1e4e8; }
+        .address-block strong { color: var(--dark); }
+
+        @media (max-width: 768px) { 
+            h1 { font-size: 1.7rem; } 
+            .nav-container { flex-direction: column; gap: 10px; } 
+            .tech-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 15px; }
+            .hero-container { padding: 30px 20px; }
+            .section { padding: 50px 15px; }
+            .card h3 { min-height: auto; }
+            .form-box { padding: 20px; }
+        }
+        @media (max-width: 480px) {
+            .grid { grid-template-columns: 1fr; }
+            .color-grid { grid-template-columns: 1fr 1fr; }
+        }
     </style>
 </head>
 <body>
+    <!-- ===== HEADER ===== -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-box"><img src="logo.png" alt="Логотип" class="logo-img" onerror="this.style.display='none'">ARS MEMORIAE</a>
-            <nav><a href="#about">О памятниках</a><a href="#prices">Прайс-лист</a><a href="#faq">Вопросы</a><a href="#order">Заявка</a></nav>
+            <a href="#" class="logo-box">
+                <img src="logo.png" alt="Ars Memoriae" class="logo-img" onerror="this.style.display='none'">
+                ARS MEMORIAE
+            </a>
+            <nav>
+                <a href="#about">О памятниках</a>
+                <a href="#prices">Прайс-лист</a>
+                <a href="#colors">Цвета</a>
+                <a href="#faq">Вопросы</a>
+                <a href="#order">Заявка</a>
+            </nav>
         </div>
     </header>
+
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <div class="hero-container">
             <h1>Практичные памятники "Колыбель" от производителя в Свердловской области</h1>
-            <p>Без заливки бетона и грязных мокрых работ за 2-3 часа. Вдвоем. 100% Самостоятельная установка? Легко! Срок службы более 15 лет.</p>
-            <div class="cta-group"><a href="#order" class="cta-btn">Оставить заявку</a><a href="tel:+79058028255" class="cta-btn cta-phone">+7 (905) 802-82-55</a></div>
+            <p>Без заливки бетона и грязных мокрых работ за 2–3 часа. Вдвоем. 100% Самостоятельная установка? Легко! Срок службы более 15 лет.</p>
+            <div class="cta-group">
+                <a href="#order" class="cta-btn">Оставить заявку</a>
+                <a href="tel:+79058028255" class="cta-btn cta-phone">+7 (905) 802-82-55</a>
+            </div>
         </div>
     </section>
+
+    <!-- ===== О ПРОДУКТЕ ===== -->
     <section class="section" id="about">
         <h2 class="section-title">Памятники "Колыбель"</h2>
         <div class="tech-grid">
@@ -91,30 +132,146 @@
                     <li><strong>Торцевая плитка уже в цене?</strong> Да, во всех комплектациях торцы уже установлены на заводе.</li>
                 </ul>
             </div>
-            <div><img src="Плита Колыбель_черно-серая глянец .png" alt="Конструкция" class="tech-img" onerror="this.style.display='none'"></div>
+            <div>
+                <img src="Плита Колыбель_черно-серая глянец .png" alt="Конструкция" class="tech-img" onerror="this.style.display='none'">
+            </div>
         </div>
     </section>
+
+    <!-- ===== ЦВЕТА ПЛИТКИ (новый блок) ===== -->
+    <section class="section" id="colors">
+        <h2 class="section-title">Цветовая линейка плиты мощения</h2>
+        <div class="color-grid">
+            <div class="color-card">
+                <div class="color-dot" style="background: #b8b8b8;"></div>
+                <h4>Колыбель Стандарт</h4>
+                <p style="font-size: 0.9rem; color: #666;">Серый матовый</p>
+                <div class="price">от 15 000 ₽</div>
+            </div>
+            <div class="color-card">
+                <div class="color-dot" style="background: #1a1a1a;"></div>
+                <h4>Колыбель Люкс</h4>
+                <p style="font-size: 0.9rem; color: #666;">Глубокий чёрный, глянец</p>
+                <div class="price">от 17 000 ₽</div>
+            </div>
+            <div class="color-card">
+                <div class="color-dot" style="background: linear-gradient(135deg, #2a2a2a 40%, #8a8a8a 60%, #2a2a2a);"></div>
+                <h4>Колыбель Премиум</h4>
+                <p style="font-size: 0.9rem; color: #666;">Двухцветный глянец "под мрамор"</p>
+                <div class="price">от 21 000 ₽</div>
+            </div>
+            <div class="color-card">
+                <div class="color-dot" style="background: #c4a882;"></div>
+                <h4>Колыбель Стандарт</h4>
+                <p style="font-size: 0.9rem; color: #666;">Светло-коричневый матовый</p>
+                <div class="price">от 15 000 ₽</div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px; font-size: 0.95rem; color: #555;">Размер плиты: 900×1500 мм | Толщина: 80 мм | Торцевая плитка включена во все цвета</p>
+    </section>
+
+    <!-- ===== ПРАЙС-ЛИСТ (комплекты) ===== -->
     <section class="section" id="prices">
-        <h2 class="section-title">Прайс-лист</h2>
+        <h2 class="section-title">Комплекты "Колыбель"</h2>
         <div class="grid">
             <div class="card">
-                <div class="card-img-box"><img src="Колыбель_База.png" class="card-img" alt="Эконом" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Эконом»</h3><div class="price">39 900 ₽</div><a href="#order" class="cta-btn" style="width:100%; text-align:center;">Заказать</a>
+                <div class="card-img-box"><img src="Колыбель_База.png" class="card-img" alt="Стандарт" onerror="this.parentNode.style.display='none'"></div>
+                <h3>Колыбель Стандарт</h3>
+                <p style="font-size: 0.9rem; color: #666; min-height: 40px;">Серая плита + стела + тумба + благоустройство + стекло 30×40 см</p>
+                <div class="price">47 000 ₽ / 59 000 ₽</div>
+                <p style="font-size: 0.8rem; color: #888;">Опт / Розница</p>
+                <a href="#order" class="card-btn">Заказать</a>
             </div>
             <div class="card">
-                <div class="card-img-box"><img src="Колыбель Эконом серая.png" class="card-img" alt="Люкс" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Люкс»</h3><div class="price">69 900 ₽</div><a href="#order" class="cta-btn" style="width:100%; text-align:center;">Заказать</a>
+                <div class="card-img-box"><img src="Колыбель_Люкс_черная.png" class="card-img" alt="Люкс" onerror="this.parentNode.style.display='none'"></div>
+                <h3>Колыбель Люкс с гравировкой</h3>
+                <p style="font-size: 0.9rem; color: #666; min-height: 40px;">Чёрная плита + стела с гравировкой + тумба + благоустройство + стекло</p>
+                <div class="price">47 000 ₽ / 59 000 ₽</div>
+                <p style="font-size: 0.8rem; color: #888;">Опт / Розница</p>
+                <a href="#order" class="card-btn">Заказать</a>
             </div>
             <div class="card">
-                <div class="card-img-box"><img src="Колыбель_Люкс_черная.png" class="card-img" alt="Премиум" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Премиум»</h3><div class="price">84 900 ₽</div><a href="#order" class="cta-btn" style="width:100%; text-align:center;">Заказать</a>
+                <div class="card-img-box"><img src="Колыбель_Премиум.png" class="card-img" alt="Премиум" onerror="this.parentNode.style.display='none'"></div>
+                <h3>Колыбель Премиум</h3>
+                <p style="font-size: 0.9rem; color: #666; min-height: 40px;">Двухцветная плита + стела + тумба + благоустройство + 2 стекла</p>
+                <div class="price">67 000 ₽ / 79 000 ₽</div>
+                <p style="font-size: 0.8rem; color: #888;">Опт / Розница</p>
+                <a href="#order" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <div class="card-img-box"><img src="Колыбель_Крест.png" class="card-img" alt="Премиум с Крестом" onerror="this.parentNode.style.display='none'"></div>
+                <h3>Колыбель Премиум с Крестом</h3>
+                <p style="font-size: 0.9rem; color: #666; min-height: 40px;">Двухцветная плита + крест из акрилового полимера + тумба + 2 стекла</p>
+                <div class="price">65 000 ₽ / 75 000 ₽</div>
+                <p style="font-size: 0.8rem; color: #888;">Опт / Розница</p>
+                <a href="#order" class="card-btn">Заказать</a>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #666;">* Оптовые цены для ритуальных агентств. Установка +20 000 ₽ (опционально).</p>
     </section>
+
+    <!-- ===== FAQ ===== -->
     <section class="section" id="faq">
         <h2 class="section-title">Вопросы и ответы</h2>
         <div class="faq-item">
             <div class="faq-q">◆ Нужен ли бетонный фундамент для установки комплекса «Колыбель»?</div>
-            <p style="padding-left: 20px; color: #444;">Ответ: Нет. Комплекс устанавливается силами двух человек за 2-3 часа на подготовленное основание. Вам не нужно ждать усадки грунта.</p>
+            <p style="padding-left: 20px; color: #444;">Нет. Комплекс устанавливается силами двух человек за 2-3 часа на подготовленное основание (отсыпку). Вам не нужно ждать усадки бетона.</p>
         </div>
         <div class="faq-item">
+            <div class="faq-q">◆ Сколько весит плита и можно ли её увезти в легковом авто?</div>
+            <p style="padding-left: 20px; color: #444;">Вес плиты — 94 кг. Она легко помещается в прицеп легкового автомобиля. Грузовик и манипулятор не требуются.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◆ Керамогранит не отклеится со временем?</div>
+            <p style="padding-left: 20px; color: #444;">Нет. Используется беспустотная технология заливки под давлением. Пузырей и пустот нет — отслоение невозможно.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◆ Что входит в комплект «Премиум»?</div>
+            <p style="padding-left: 20px; color: #444;">Двухцветная плита «под мрамор» + чёрная глянцевая стела + тумба + благоустройство (20 плиток) + два полимер-гибридных стекла (40×90 см и 60×105 см).</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">◆ Есть ли скидки для ритуальных агентств?</div>
+            <p style="padding-left: 20px; color: #444;">Да. Для ритуальных салонов и агентств действуют оптовые цены. Старт от 1 комплекта. Также возможна скидка за скорость.</p>
+        </div>
+    </section>
+
+    <!-- ===== ФОРМА ЗАЯВКИ ===== -->
+    <section class="section" id="order">
+        <h2 class="section-title">Оставить заявку</h2>
+        <div class="form-box">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input type="text" id="name" class="form-control" placeholder="Например: Иван Петров" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="+7 (___)-___-__-__" required>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Комментарий (комплект, цвет, доставка)</label>
+                    <textarea id="comment" class="form-control" rows="4" placeholder="Напишите, что вас интересует..."></textarea>
+                </div>
+                <button type="submit" class="cta-btn" style="width:100%; text-align:center;">Отправить заявку</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #888;">Или звоните: <strong style="color: var(--dark);">+7 (905) 802-82-55</strong></p>
+        </div>
+    </section>
+
+    <!-- ===== АДРЕС ===== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="address-block">
+            <p><strong>📍 Склад и самовывоз:</strong> Екатеринбург, ул. Трактовая, 13</p>
+            <p><strong>📧 Почта:</strong> order@arsmemoriae.ru</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">«Сегодня купил — завтра поставил. Всё для людей. Красиво. Недорого. Надёжно.»</p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>© 2026 ARS MEMORIAE — «Память как искусство»</p>
+        <p style="margin-top: 8px;">Склад: Екатеринбург, ул. Трактовая, 13 | <a href="tel:+79058028255">+7 (905) 802-82-55</a></p>
+        <p style="margin-top: 8px; font-size: 0.8rem; color: #666;">Все права защищены. Изготовление памятников из гранита и керамогранита.</p>
+    </footer>
+</body>
+</html>
