@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практичные памятники Колыбель в Свердловской области</title>
+    <style>
+        :root {
+            --primary: #d4af37;
+            --dark: #1a1a1a;
+            --light: #f9f9f9;
+            --text: #333333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--light); color: var(--text); line-height: 1.6; }
+        header { background: var(--dark); color: white; padding: 15px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: bold; color: var(--primary); font-size: 1.4rem; text-decoration: none; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-size: 0.95rem; transition: color 0.3s; }
+        nav a:hover { color: var(--primary); }
+        
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%); color: white; padding: 60px 20px; text-align: center; }
+        .hero-container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 12px; border: 1px solid rgba(212,175,55,0.2); }
+        h1 { color: var(--primary); font-size: 2.2rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.1rem; margin-bottom: 30px; color: #dddddd; }
+        .cta-btn { display: inline-block; background: var(--primary); color: var(--dark); padding: 14px 28px; text-decoration: none; font-weight: bold; border-radius: 6px; transition: transform 0.2s, background 0.3s; margin: 5px; }
+        .cta-btn:hover { transform: translateY(-2px); background: #f1c40f; }
+        .cta-phone { background: transparent; color: white; border: 2px solid white; }
+        .cta-phone:hover { background: white; color: var(--dark); }
+
+        .section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; position: relative; padding-bottom: 10px; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--primary); margin: 10px auto 0; }
+        
+        .tech-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .tech-highlight { background: #fffde7; border-left: 4px solid var(--primary); padding: 15px; margin: 20px 0; font-weight: 500; }
+        .bullets { list-style: none; }
+        .bullets li { margin-bottom: 15px; padding-left: 25px; position: relative; }
+        .bullets li::before { content: "•"; color: var(--primary); font-size: 1.5rem; position: absolute; left: 5px; top: -4px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1max)); gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; display: flex; flex-direction: column; justify-content: space-between; border-top: 3px solid transparent; transition: border 0.3s; }
+        .card:hover { border-top: 3px solid var(--primary); }
+        .card h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .price { font-size: 1.5rem; font-weight: bold; color: var(--dark); margin: 15px 0; }
+        .card-btn { background: #eeeeee; color: var(--dark); padding: 10px; text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 0.9rem; }
+        .card-btn:hover { background: var(--primary); }
+
+        .faq-item { background: white; padding: 20px; border-radius: 6px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .faq-q { font-weight: bold; color: var(--dark); margin-bottom: 8px; }
+
+        .form-box { background: white; max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 0.9rem; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #cccccc; border-radius: 4px; font-size: 1rem; }
+        .form-control:focus { border-color: var(--primary); outline: none; }
+        .submit-btn { width: 100%; background: var(--primary); color: var(--dark); border: none; padding: 14px; font-size: 1.1rem; font-weight: bold; border-radius: 4px; cursor: pointer; transition: background 0.3s; }
+        .submit-btn:hover { background: #f1c40f; }
+        .form-note { font-size: 0.75rem; color: #777777; margin-top: 15px; text-align: center; }
+
+        footer { background: var(--dark); color: #aaaaaa; padding: 40px 20px; text-align: center; font-size: 0.9rem; border-top: 3px solid var(--primary); }
+        footer p { margin-bottom: 10px; }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.7rem; }
+            .nav-container { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; }
+            .hero-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ARS MEMORIAE</a>
+            <nav>
+                <a href="#about">О памятниках</a>
+                <a href="#prices">Прайс-лист</a>
+                <a href="#faq">Вопросы</a>
+                <a href="#order">Заявка</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Практичные памятники "Колыбель" от производителя в Свердловской области</h1>
+            <p>Без заливки бетона и грязных мокрых работ за 2-3 часа. Вдвоем. 100% Самостоятельная установка? Легко! Срок службы более 15 лет.</p>
+            <a href="#order" class="cta-btn">Оставить заявку</a>
+            <a href="tel:+79050000000" class="cta-btn cta-phone">Показать телефон</a>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">Памятники "Колыбель"</h2>
+        <div class="tech-box">
+            <p>Готовые меомориальные комплексы «Колыбель» от Ars Memoria (Искусство Памяти). Уникальное решение для благоустройства захоронения «под ключ» силами двух человек всего за 2–3 часа!</p>
+            <div class="tech-highlight">
+                Главный плюс технологии — монтаж без заливки бетонного фундамента. Вам больше не нужно искать строительные бригады, возить цемент, месить бетон на кладбище и ждать неделями усадки грунта. Вы экономите до 20 000 рублей на установке!
+            </div>
+            <h3 style="margin: 25px 0 15px;">Честно и без воды о материалах и конструкции:</h3>
+            <ul class="bullets">
+                <li><strong>Из чего сделана плита?</strong> Основа — сверхпрочный монолитный полистиролбетон. Облицовка — премиальный керамогранит толщиной 10 мм.</li>
+                <li><strong>Керамогранит не отклеится?</strong> Исключено. Плиты изготавливаются по беспустотной технологии вакуумной заливки под давлением. Внутри бетона нет пузырей воздуха, поэтому плитка никогда не отойдет от перепадов температур.</li>
+                <li><strong>Сколько весит и как везти?</strong> Вес плиты — всего 94 кг. Комплекс легко помещается в прицеп или багажник обычного легкового автомобиля. Никаких манипуляторов и грузовиков.</li>
+                <li><strong>Торцевая плитка уже в цене?</strong> Да, во всех комплектациях торцы уже установлены на заводе, доплачивать за них не нужно.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section" id="prices">
+        <h2 class="section-title">Прайс-лист</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Ритуальные памятные таблички "Память как..."</h3>
+                <div class="price">1 000 ₽ <small style="font-size:0.8rem; font-weight:normal;">/ за 1 шт.</small></div>
+                <a href="#order" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <h3>Сборный мемориальный комплекс «Эконом»</h3>
+                <p style="font-size:0.85rem; color:#666;">Базовая комплектация: плита, 4 бордюра, тумба.</p>
+                <div class="price">39 900 ₽</div>
+                <a href="#order" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <h3>Сборный мемориальный комплекс «Люкс»</h3>
+                <p style="font-size:0.85rem; color:#666;">Премиальное исполнение. В комплекте комплектация...</p>
+                <div class="price">69 900 ₽</div>
+                <a href="#order" class="card-btn">Заказать</a>
+            </div>
+            <div class="card">
+                <h3>Сборный мемориальный комплекс «Премиум»</h3>
+                <p style="font-size:0.85rem; color:#666;">Особое исполнение мемориала. В комплекте...</p>
+                <div class="price">84 900 ₽</div>
+                <a href="#order" class="card-btn">Заказать</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="faq">
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+        <div class="faq-item">
+            <div class="faq-q">Вопрос: Нужен ли бетонный фундамент для установки комплекса «Колыбель»?</div>
+            <div class="faq-a">Ответ: Нет. Уникальность нашей технологии заключается в монтаже без заливки бетона и мокрых процессов. Комплекс устанавливается силами двух человек за 2-3 часа на подготовленное основание (отсыпку). Вам не нужно ждать усадки грунта.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Вопрос: Входит ли цветник, тумба и портрет в указанную стоимость?</div>
