@@ -3,108 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практичные памятники Колыбель в Свердловской области</title>
+    <title>Практичные памятники Колыбель от производителя в Свердловской области</title>
     <style>
-        :root { --primary: #d4af37; --bg-dark: #141414; --bg-card: #1e1e1e; --text-light: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
-        header { background: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px); padding: 15px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(212,175,55,0.1); }
-        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo-box { display: flex; align-items: center; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 1.4rem; }
-        .logo-img { height: 45px; margin-right: 12px; object-fit: contain; }
-        nav a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-size: 0.95rem; }
-        nav a:hover { color: var(--primary); }
-        .hero { background: linear-gradient(rgba(20,20,20,0.75), rgba(20,20,20,0.85)), url('hero-bg.jpg') no-repeat center center/cover; padding: 100px 20px; text-align: center; }
-        .hero-container { max-width: 850px; margin: 0 auto; background: rgba(20,20,20,0.75); padding: 45px 30px; border-radius: 16px; border: 1px solid rgba(212,175,55,0.25); backdrop-filter: blur(8px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-        h1 { color: var(--primary); font-size: 2.4rem; margin-bottom: 20px; text-transform: uppercase; line-height: 1.3; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; color: #f0f0f0; }
-        .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--primary) 0%, #aa841c 100%); color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 8px; margin: 8px; box-shadow: 0 4px 15px rgba(212,175,55,0.3); }
-        .cta-btn:hover { background: #f1c40f; }
-        .cta-phone { background: transparent; color: white; border: 2px solid var(--primary); box-shadow: none; }
-        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 2rem; text-transform: uppercase; color: var(--primary); }
-        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--primary); margin: 15px auto 0; }
-        .tech-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid #2a2a2a; }
-        .tech-img { width: 100%; border-radius: 12px; border: 1px solid rgba(212,175,55,0.2); object-fit: cover; }
-        .tech-highlight { background: rgba(212,175,55,0.06); border-left: 4px solid var(--primary); padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        :root {
+            --gold: #dfba59;
+            --gold-light: #f3d483;
+            --dark-deep: #0f1011;
+            --dark-card: #181a1c;
+            --dark-border: #2c2f33;
+            --text-main: #f5f6f7;
+            --text-muted: #9aa0a6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+        body { background-color: var(--dark-deep); color: var(--text-main); line-height: 1.6; }
+        
+        /* Шапка сайта */
+        header { background: rgba(15, 16, 17, 0.9); backdrop-filter: blur(12px); padding: 15px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--dark-border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-box { display: flex; align-items: center; text-decoration: none; color: var(--gold); font-weight: 700; font-size: 1.3rem; letter-spacing: 1px; }
+        .logo-img { height: 42px; margin-right: 12px; object-fit: contain; }
+        nav a { color: var(--text-main); text-decoration: none; margin-left: 25px; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--gold); }
+        
+        /* Главный экран */
+        .hero { background: linear-gradient(to bottom, rgba(15,16,17,0.65), rgba(15,16,17,0.95)), url('hero-bg.jpg') no-repeat center center/cover; padding: 120px 20px; text-align: center; }
+        .hero-container { max-width: 850px; margin: 0 auto; background: rgba(24, 26, 28, 0.75); padding: 60px 40px; border-radius: 20px; border: 1px solid rgba(223,186,89,0.2); backdrop-filter: blur(10px); box-shadow: 0 30px 60px rgba(0,0,0,0.7); }
+        h1 { color: var(--gold); font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.3; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; color: #e3e5e8; font-weight: 300; }
+        .cta-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .cta-btn { display: inline-block; background: linear-gradient(135deg, var(--gold) 0%, #b89332 100%); color: #0f1011; padding: 16px 35px; text-decoration: none; font-weight: 700; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(223,186,89,0.25); font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; border: none; cursor: pointer; }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(223,186,89,0.45); color: #000; background: var(--gold-light); }
+        .cta-phone { background: transparent; color: var(--text-main); border: 2px solid var(--gold); box-shadow: none; }
+        .cta-phone:hover { background: rgba(223,186,89,0.1); color: var(--gold); }
+
+        /* Секции общие */
+        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 15px auto 0; border-radius: 2px; }
+        
+        /* Блок О продукте / Технологии */
+        .tech-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 50px; align-items: center; background: var(--dark-card); padding: 50px; border-radius: 20px; border: 1px solid var(--dark-border); box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+        .tech-text p { font-size: 1.1rem; color: var(--text-main); margin-bottom: 20px; }
+        .tech-highlight { background: rgba(223,186,89,0.05); border-left: 3px solid var(--gold); padding: 20px; margin: 25px 0; border-radius: 0 12px 12px 0; color: #fff; font-size: 1.05rem; }
         .bullets { list-style: none; }
-        .bullets li { margin-bottom: 15px; padding-left: 25px; position: relative; color: #e0e0e0; }
-        .bullets li::before { content: "✓"; color: var(--primary); font-weight: bold; position: absolute; left: 5px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
-        .card { background: var(--bg-card); padding: 20px; border-radius: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid #2a2a2a; transition: border-color 0.3s; }
-        .card:hover { border-color: var(--primary); }
-        .card-img-box { width: 100%; height: 200px; margin-bottom: 15px; border-radius: 8px; overflow: hidden; background: #141414; border: 1px solid #333; display: flex; align-items: center; justify-content: center; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; }
-        .card h3 { margin-bottom: 10px; font-size: 1.2rem; min-height: 48px; display: flex; align-items: center; justify-content: center; }
-        .price { font-size: 1.7rem; font-weight: bold; color: var(--primary); margin: 15px 0; border-top: 1px solid #2a2a2a; border-bottom: 1px solid #2a2a2a; padding: 10px 0; background: rgba(0,0,0,0.15); }
-        .card-btn { background: #2a2a2a; color: white; padding: 12px; text-decoration: none; font-weight: bold; border-radius: 8px; border: 1px solid #444; }
-        .card-btn:hover { background: var(--primary); color: #000; }
-        .faq-grid { max-width: 850px; margin: 0 auto; }
-        .faq-item { background: var(--bg-card); padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #2a2a2a; }
-        .faq-q { font-weight: bold; color: var(--primary); margin-bottom: 10px; font-size: 1.15rem; }
-        .form-box { background: var(--bg-card); max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 16px; border: 1px solid #2a2a2a; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-size: 0.95rem; color: #aaa; }
-        .form-control { width: 100%; padding: 14px; background: #141414; border: 1px solid #333; border-radius: 8px; color: white; }
-        .form-control:focus { border-color: var(--primary); outline: none; }
-        .submit-btn { width: 100%; background: linear-gradient(135deg, var(--primary) 0%, #aa841c 100%); color: #000; border: none; padding: 16px; font-size: 1.1rem; font-weight: bold; border-radius: 8px; cursor: pointer; }
-        footer { background: #0a0a0a; color: #aaa; padding: 50px 20px; text-align: center; font-size: 0.95rem; border-top: 1px solid #2a2a2a; }
+        .bullets li { margin-bottom: 18px; padding-left: 30px; position: relative; color: #e3e5e8; font-size: 1rem; }
+        .bullets li::before { content: "✓"; color: var(--gold); font-weight: 700; position: absolute; left: 5px; font-size: 1.1rem; }
+        .tech-img { width: 100%; border-radius: 12px; border: 1px solid var(--dark-border); object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+
+        /* Каталог / Карточки */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--dark-card); padding: 25px; border-radius: 20px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--dark-border); transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; }
+        .card:hover { border-color: rgba(223,186,89,0.4); transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .card-img-box { width: 100%; height: 220px; margin-bottom: 20px; border-radius: 12px; overflow: hidden; background: #0f1011; border: 1px solid var(--dark-border); display: flex; align-items: center; justify-content: center; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .card:hover .card-img { transform: scale(1.04); }
+        .card h3 { font-size: 1.25rem; color: #fff; font-weight: 600; margin-bottom: 15px; min-height: 40px; display: flex; align-items: center; justify-content: center; }
+        .price { font-size: 1.8rem; font-weight: 700; color: var(--gold); margin-bottom: 20px; padding: 12px 0; background: rgba(15,16,17,0.4); border-radius: 8px; border: 1px solid rgba(255,255,255,0.02); }
+        .card-btn { background: #232629; color: var(--text-main); padding: 14px; text-decoration: none; font-weight: 700; border-radius: 8px; font-size: 0.95rem; transition: all 0.3s; border: 1px solid var(--dark-border); text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-btn:hover { background: linear-gradient(135deg, var(--gold) 0%, #b89332 100%); color: #000; border-color: var(--gold); }
+
+        /* FAQ (Вопросы-Ответы) */
+        .faq-grid { max-width: 900px; margin: 0 auto; }
+        .faq-item { background: var(--dark-card); padding: 30px; border-radius: 16px; margin-bottom: 20px; border: 1px solid var(--dark-border); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .faq-q { font-weight: 600; color: var(--gold); margin-bottom: 12px; font-size: 1.15rem; display: flex; align-items: flex-start; gap: 10px; }
+        .faq-q span { color: var(--text-muted); font-weight: 300; }
+        .faq-a { color: #d1d5db; padding-left: 25px; line-height: 1.7; font-size: 1rem; }
+
+        /* Форма заказа */
+        .form-box { background: var(--dark-card); max-width: 600px; margin: 0 auto; padding: 45px; border-radius: 20px; border: 1px solid var(--dark-border); box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 10px; font-weight: 500; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-control { width: 100%; padding: 15px; background: var(--dark-deep); border: 1px solid var(--dark-border); border-radius: 8px; font-size: 1rem; color: white; transition: all 0.3s; }
+        .form-control:focus { border-color: var(--gold); outline: none; box-shadow: 0 0 10px rgba(223,186,89,0.1); }
+        .submit-btn { width: 100%; background: linear-gradient(135deg, var(--gold) 0%, #b89332 100%); color: #000; border: none; padding: 16px; font-size: 1.1rem; font-weight: 700; border-radius: 8px; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(223,186,89,0.2); }
+        .submit-btn:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(223,186,89,0.4); }
+
+        /* Подвал */
+        footer { background: #08090a; color: var(--text-muted); padding: 60px 20px; text-align: center; font-size: 0.95rem; border-top: 1px solid var(--dark-border); }
         footer p { margin-bottom: 10px; }
-        @media (max-width: 768px) { h1 { font-size: 1.8rem; } .nav-container { flex-direction: column; gap: 15px; } .tech-grid { grid-template-columns: 1fr; } }
+        
+        @media (max-width: 900px) {
+            h1 { font-size: 1.9rem; }
+            .tech-grid { grid-template-columns: 1fr; gap: 30px; padding: 30px 20px; }
+            .nav-container { flex-direction: column; gap: 15px; text-align: center; }
+            nav a { margin: 0 10px; }
+            .hero-container { padding: 40px 20px; }
+            .form-box { padding: 30px 20px; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-box"><img src="logo.png" alt="Логотип" class="logo-img" onerror="this.style.display='none'">ARS MEMORIAE</a>
-            <nav><a href="#about">О памятниках</a><a href="#prices">Прайс-лист</a><a href="#faq">Вопросы</a><a href="#order">Заявка</a></nav>
+            <a href="#" class="logo-box">
+                <img src="logo.png" alt="Логотип" class="logo-img" onerror="this.style.display='none'">
+                ARS MEMORIAE
+            </a>
+            <nav>
+                <a href="#about">О памятниках</a>
+                <a href="#prices">Прайс-лист</a>
+                <a href="#faq">Вопросы</a>
+                <a href="#order">Заявка</a>
+            </nav>
         </div>
     </header>
+
     <section class="hero">
         <div class="hero-container">
             <h1>Практичные памятники "Колыбель" от производителя в Свердловской области</h1>
             <p>Без заливки бетона и грязных мокрых работ за 2-3 часа. Вдвоем. 100% Самостоятельная установка? Легко! Срок службы более 15 лет.</p>
-            <a href="#order" class="cta-btn">Оставить заявку</a><a href="tel:+79058028255" class="cta-btn cta-phone">+7 (905) 802-82-55</a>
+            <div class="cta-group">
+                <a href="#order" class="cta-btn">Оставить заявку</a>
+                <a href="tel:+79058028255" class="cta-btn cta-phone">+7 (905) 802-82-55</a>
+            </div>
         </div>
     </section>
+
     <section class="section" id="about">
         <h2 class="section-title">Памятники "Колыбель"</h2>
-        <div class="tech-grid">
-            <div>
-                <p>Готовые мемориальные комплексы «Колыбель» от Ars Memoria. Уникальное решение для благоустройства захоронения «под ключ» силами двух человек всего за 2–3 часа!</p>
-                <div class="tech-highlight">Главный плюс технологии — монтаж без заливки бетонного фундамента. Вы экономите до 20 000 рублей на установке!</div>
-                <ul class="bullets">
-                    <li><strong>Из чего сделана плита?</strong> Основа — монолитный полистиролбетон. Облицовка — премиальный керамогранит 10 мм.</li>
-                    <li><strong>Керамогранит не отклеится?</strong> Исключено. Плиты изготавливаются по беспустотной технологии вакуумной заливки.</li>
-                    <li><strong>Сколько весит и как везти?</strong> Вес плиты — 94 кг. Комплекс легко помещается в прицеп легкового автомобиля.</li>
-                    <li><strong>Торцевая плитка уже в цене?</strong> Да, во всех комплектациях торцы уже установлены на заводе.</li>
-                </ul>
-            </div>
-            <div><img src="Плита Колыбель_черно-серая глянец .png" alt="Конструкция памятника" class="tech-img" onerror="this.style.display='none'"></div>
-        </div>
-    </section>
-    <section class="section" id="prices">
-        <h2 class="section-title">Прайс-лист</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-img-box"><img src="Колыбель_База.png" class="card-img" alt="Эконом" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Эконом»</h3><div class="price">39 900 ₽</div><a href="#order" class="card-btn">Заказать</a>
-            </div>
-            <div class="card">
-                <div class="card-img-box"><img src="Колыбель Эконом серая.png" class="card-img" alt="Люкс" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Люкс»</h3><div class="price">69 900 ₽</div><a href="#order" class="card-btn">Заказать</a>
-            </div>
-            <div class="card">
-                <div class="card-img-box"><img src="Колыбель_Люкс_черная.png" class="card-img" alt="Премиум" onerror="this.parentNode.style.display='none'"></div>
-                <h3>Сборный мемориальный комплекс «Премиум»</h3><div class="price">84 900 ₽</div><a href="#order" class="card-btn">Заказать</a>
-            </div>
-        </div>
-    </section>
-    <section class="section" id="faq">
-        <h2 class="section-title">Часто задаваемые вопросы</h2>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <div class="faq-q">? Нужен ли бетонный фундамент для установки комплекса «Колыбель»?</div>
-                <p style="color: #ddd; padding-left: 5px;">Ответ: Нет. Комплекс устанавливается силами двух человек за 2-3 часа на подготовленное основание. Вам не нужно ждать усадки грунта.</p>
-            </div>
-            <div class="faq-item">
